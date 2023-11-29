@@ -1,0 +1,9 @@
+1)
+
+from scipy.optimize import linprog
+objfn=[1,1]
+lhs=[[1,0],[0,1],[1,1]]
+rhs=[6,6,11]
+opt=linprog(c=objfn,A_ub=lhs,b_ub=rhs,methods="simplex")
+opt
+
