@@ -1,0 +1,107 @@
+Q.1 Apply python program in each of the following transformation on the point p[3,-1].
+
+i)Reflection through x-axis.
+
+import numpy as np
+import math
+def ref(xy):
+    x,y=xy
+    j=np.matrix([[1,0],[0,-1]])
+    m=np.dot(j,[x,y])
+    return float(m.T[0]),float(m.T[1])
+point=(3,-1)
+ref(point)
+OUTPUT:-
+(3.0, 1.0)
+
+ii)Scalling in x co-ordinate by factor 2.
+
+import numpy as np
+import math
+def ref(xy):
+    x,y=xy
+    j=np.matrix([[2,0],[0,1]])
+    m=np.dot(j,[x,y])
+    return float(m.T[0]),float(m.T[1])
+point=(3,-1)
+ref(point)
+OUTPUT:-
+(6.0, -1.0)
+
+iii)Scalling in y co-ordinate by factor 1.5 .
+
+import numpy as np
+import math
+def ref(xy):
+    x,y=xy
+    j=np.matrix([[1,0],[0,1.5]])
+    m=np.dot(j,[x,y])
+    return float(m.T[0]),float(m.T[1])
+point=(3,-1)
+ref(point)
+OUTPUT:-
+(3.0, -1.5)
+
+iv)Reflection through the line y=x.
+
+import numpy as np
+import math
+ 
+def ref(xy):
+    x,y=xy
+    j=np.matrix([[0,1],[1,0]])
+    m=np.dot(j,[x,y])
+    return float(m.T[0]),float(m.T[1])
+point=(3,-1)
+ref(point)
+
+OUTPUT:-
+(-1.0, 3.0)
+//////////////////////////////////////////////////////////////////////////////////////
+
+Q.2 Apply python program in each of the following transformation on the point p[4,-2].
+
+i)Reflection through y-axis.
+
+import numpy as np
+import math
+def ref(xy):
+    x,y=xy
+    j=np.matrix([[-1,0],[0,1]])
+    m=np.dot(j,[x,y])
+    return float(m.T[0]),float(m.T[1])
+point=(4,-2)
+ref(point)
+OUTPUT:-
+(-4.0, -2.0)
+
+
+
+ii)Scalling in x co-ordinate by factor 3.
+
+import numpy as np
+import math
+def ref(xy):
+    x,y=xy
+    j=np.matrix([[3,0],[0,1]])
+    m=np.dot(j,[x,y])
+    return float(m.T[0]),float(m.T[1])
+point=(4,-2)
+ref(point)
+OUTPUT:-
+(12.0, -2.0)
+
+iv)Reflection through y=-x.
+
+import numpy as np
+import math
+def ref(xy):
+    x,y=xy
+    j=np.matrix([[0,1],[-1,0]])
+    m=np.dot(j,[x,y])
+    return float(m.T[0]),float(m.T[1])
+point=(4,-2)
+ref(point)
+OUTPUT:-
+(-2.0, -4.0)
+
