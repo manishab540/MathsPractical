@@ -1,0 +1,10 @@
+1)
+import matplotlib.pyplot as plt
+x=[1,2,3]
+y=[240,80,160]
+tick_label=['green','yellow','pink']
+plt.bar(x,y,tick_label=tick_label,width=0.7,color=['green','yellow','pink'])
+plt.xlabel=('green','yellow','pink')
+plt.ylabel=('color name')
+plt.title('Types of color')
+plt.show()
