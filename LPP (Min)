@@ -1,0 +1,30 @@
+LPP(Linear Programming Problem) using pulp for Minimization :
+
+import pulp as p
+Lp_prob=p.LpProblem('Problem',p.LpMinimize)
+x=p.LpVariable("x",lowBound=0)
+y=p.LpVariable("y",lowBound=0)
+#Objective Function
+Lp_prob+=0.2*x+0.8*y
+Lp_prob+=x+y>=700
+Lp_prob+=0.21*x-0.30*y<=0
+Lp_prob+=0.03*x-0.01*y>=0
+print(Lp_prob)
+status=Lp_prob.solve()
+print(p.LpStatus[status])
+print(p.value(x),p.value(y),p.value(Lp_prob.objective))
+
+OUTPUT:
+Problem:
+MINIMIZE
+0.2*x + 0.8*y + 0.0
+SUBJECT TO
+_C1: x + y >= 700
+_C2: 0.21 x - 0.3 y <= 0
+_C3: 0.03 x - 0.01 y >= 0
+VARIABLES
+x Continuous
+y Continuous
+Optimal
+411.76471 288.23529 312.94117400000005
+
