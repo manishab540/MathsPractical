@@ -1,0 +1,69 @@
+LPP(Linear Programming Problem) using pulp for Maximization:
+
+import pulp as p
+Lp_prob=p.LpProblem('Problem',p.LpMaximize)
+x=p.LpVariable("x",lowBound=0)
+y=p.LpVariable("y",lowBound=0)
+#Objective Function
+Lp_prob+=3*x+4*y
+Lp_prob+=x+y<=450
+Lp_prob+=2*x+y<=600
+print(Lp_prob)
+status=Lp_prob.solve()
+print(p.LpStatus[status])
+print(p.value(x),p.value(y),p.value(Lp_prob.objective))
+
+
+OUTPUT:
+MAXIMIZE
+3*x + 4*y + 0
+SUBJECT TO
+_C1: x + y <= 450
+
+_C2: 2 x + y <= 600
+
+VARIABLES
+x Continuous
+y Continuous
+
+Optimal
+0.0 450.0 1800.0
+
+2)LPP(Linear Programming Problem) using pulp for Maximization
+
+import pulp as p
+Lp_prob=p.LpProblem('Problem',p.LpMaximize)
+x=p.LpVariable("x",lowBound=0)
+y=p.LpVariable("y",lowBound=0)
+#Objective Function
+Lp_prob+=3.5*x+2*y
+Lp_prob+=-x-y>=-5
+Lp_prob+=-x>=-4
+Lp_prob+=y<=2
+Lp_prob+=x>=0
+Lp_prob+=y>=0
+print(Lp_prob)
+status=Lp_prob.solve()
+print(p.LpStatus[status])
+print(p.value(x),p.value(y),p.value(Lp_prob.objective))
+
+OUTPUT:
+MAXIMIZE
+3.5*x + 2*y + 0.0
+SUBJECT TO
+_C1: - x - y >= -5
+
+_C2: - x >= -4
+
+_C3: y <= 2
+
+_C4: x >= 0
+
+_C5: y >= 0
+
+VARIABLES
+x Continuous
+y Continuous
+
+Optimal
+4.0 1.0 16.0
